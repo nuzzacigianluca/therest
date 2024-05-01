@@ -184,5 +184,11 @@ body{
         padding:10px;
         opacity: 0.8;
     }
-   
+   #regForm{
+    width:95%;
+     margin-left:auto;
+      margin-right:auto;
+       margin-top:2%;
+        padding:10px
+   }
 

@@ -2,7 +2,7 @@
     <head>
       {% load static %}
         <title>TheRest - Chi siamo</title>
-
+        <link rel="stylesheet" href="{% static 'styles.css' %}">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     </head>
     <body style="background-color: 	#124e66;">
@@ -14,7 +14,7 @@
               <a href="{% url 'home' %}"><button type="button" class="btn btn-light" id="home">Home</button></a></a>
               <a href="{% url 'about' %}"><button type="button" class="btn btn-light" id="about">Chi siamo</button></a>
               <a href="{% url 'book' %}"><button type="button" class="btn btn-light" id="book">Prenota</button></a>
-              <button type="button" id="manage" class="btn btn-light">Gestisci </button>
+              <a href="{% url 'login' %}"><button type="button" id="manage" class="btn btn-light">Gestisci </button></a>
                 <button type="button" style="display:none" class="btn btn-danger" id="log-out">Log Out</button>
               </form>
           </nav>
