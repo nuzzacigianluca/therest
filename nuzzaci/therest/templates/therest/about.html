@@ -14,8 +14,14 @@
               <a href="{% url 'home' %}"><button type="button" class="btn btn-light" id="home">Home</button></a></a>
               <a href="{% url 'about' %}"><button type="button" class="btn btn-light" id="about">Chi siamo</button></a>
               <a href="{% url 'book' %}"><button type="button" class="btn btn-light" id="book">Prenota</button></a>
-              <a href="{% url 'login' %}"><button type="button" id="manage" class="btn btn-light">Gestisci </button></a>
-                <button type="button" style="display:none" class="btn btn-danger" id="log-out">Log Out</button>
+              {% if user.is_authenticated %}
+              <a href="{% url 'login' %}"><button style="display:none" type="button" id="manage" class="btn btn-light">Registrati o accedi </button></a>
+              <a href="{% url 'manage' %}"><button type="button" class="btn btn-light" id="manage">Gestisci</button></a>
+              <a href="{% url 'logout' %}"><button type="button" class="btn btn-danger" id="log-out">Log Out</button></a>
+              {% else %}
+              <a href="{% url 'login' %}"><button type="button" id="manage" class="btn btn-light">Registrati o accedi </button></a>
+              <a href="{% url 'logout' %}"><button type="button" style="display:none;" class="btn btn-danger" id="log-out">Log Out</button></a>
+              {% endif %}
               </form>
           </nav>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

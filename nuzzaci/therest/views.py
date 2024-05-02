@@ -48,3 +48,6 @@ def registrationview(request):
     return render(request, 'therest/registration.html', {
         'form': form,
     })
+def logoutview(request):
+    logout(request)
+    return render(request, 'therest/login.html')
