@@ -53,7 +53,8 @@ def logoutview(request):
     logout(request)
     return render(request, 'therest/login.html')
 
-
+def mybookingviews(request):
+    return render(request, 'therest/mybookings.html')
 
 #manager
 #nuzzaci1

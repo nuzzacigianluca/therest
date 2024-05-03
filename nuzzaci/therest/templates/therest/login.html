@@ -18,7 +18,9 @@
           {% if user.is_authenticated %}
               <a href="{% url 'login' %}"><button style="display:none" type="button" id="manage" class="btn btn-light">Registrati o accedi </button></a>
               {% if user.userprofile.role == "manager" %}
-                <a href="{% url 'manage' %}"><button type="button" class="btn btn-light" id="manage">Gestisci</button></a>
+                  <a href="{% url 'manage' %}"><button type="button" class="btn btn-light" id="manage">Gestisci</button></a>
+                  {% else %}
+                  <a href="{% url 'mybookings' %}"><button type="button" class="btn btn-light" id="manage">Le mie prenotazioni</button></a>
                 {% endif %}
               <a href="{% url 'logout' %}"><button type="button" class="btn btn-danger" id="log-out">Log Out</button></a>
               {% else %}
