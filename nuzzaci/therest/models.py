@@ -7,11 +7,12 @@ class UserProfile(models.Model):
     name = models.CharField(max_length=50)
     role=models.CharField(max_length=50)
 class Booking(models.Model):
-    number=models.CharField(max_length=3)
-    data=models.CharField(max_length=50)
-    ora=models.CharField(max_length=50)
+    number=models.CharField(max_length=3, null=True)
+    data=models.CharField(max_length=50, null=True)
+    ora=models.CharField(max_length=50, null=True)
     client = models.ForeignKey(UserProfile, on_delete=models.CASCADE, null=True)
 
 class Booking_managed(models.Model):
     id_booking=models.ForeignKey(Booking, on_delete=models.CASCADE)
     id_user=models.ForeignKey(UserProfile, on_delete=models.CASCADE)
+    state=models.BooleanField(null=True)

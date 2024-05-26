@@ -1,15 +1,16 @@
 {% load static %}
 <html>
     <head>
-      <title>TheRest - Home</title>
+      <title>TheRest - Login</title>
       <link rel="stylesheet" href="{% static 'styles.css' %}">
+      <link rel="icon" type="image/x-icon" href="{% static 'icon.png' %}">
       <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     </head>
     <body>
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <ul class="navbar-nav mr-auto">
-          <p class="h1" id="title-name-detail">Home - TheRest</p>
+          <p class="h1" id="title-name-detail">Login - TheRest</p>
         </ul>
         <form class="form-inline my-2 my-lg-0">
           <a href="{% url 'home' %}"><button type="button" class="btn btn-light" id="home">Home</button></a>
@@ -19,12 +20,13 @@
               <a href="{% url 'login' %}"><button style="display:none" type="button" id="manage" class="btn btn-light">Registrati o accedi </button></a>
               {% if user.userprofile.role == "manager" %}
                   <a href="{% url 'manage' %}"><button type="button" class="btn btn-light" id="manage">Gestisci</button></a>
+                  <a href="{% url 'managed_bookings' %}"><button type="button" class="btn btn-light" id="manage">Posti prenotati</button></a>
                   {% else %}
                   <a href="{% url 'mybookings' %}"><button type="button" class="btn btn-light" id="manage">Le mie prenotazioni</button></a>
                 {% endif %}
               <a href="{% url 'logout' %}"><button type="button" class="btn btn-danger" id="log-out">Log Out</button></a>
               {% else %}
-              <a href="{% url 'login' %}"><button type="button" id="manage" class="btn btn-light">Registrati o accedi </button></a>
+              <a href="{% url 'login' %}"><button type="button" id="manage" class="btn btn-light">Accedi </button></a>
               <a href="{% url 'logout' %}"><button type="button" style="display:none;" class="btn btn-danger" id="log-out">Log Out</button></a>
               {% endif %}
           </form>
@@ -42,7 +44,7 @@
               <input type="password" class="form-control" name="password" aria-describedby="Password" placeholder="Inserisci la tua password" required>
           </div>
           <div class="d-flex justify-content-end">
-            <a href="{% url 'registration' %}"><button type="button" id="regBut" class="btn btn-light ">Registrati</button></a>
+            <a href="{% url 'registration' %}">Registrati</a>
           </div>
           
 
